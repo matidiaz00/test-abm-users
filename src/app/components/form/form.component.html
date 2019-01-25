@@ -1,0 +1,66 @@
+
+<mat-toolbar *ngIf="user" color="primary" class="bg-transparent">
+  <button mat-icon-button routerLink="/">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="fill-remaining-space"></span>
+  <span></span>
+  <span class="fill-remaining-space"></span>
+  <button mat-icon-button (click)="removeUser(user.id)" *ngIf="id !== 'new'">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-toolbar>
+
+<form *ngIf="user" (ngSubmit)="onSubmit(userForm); userForm.reset()" #userForm="ngForm" class="d-flex align-items-center flex-column text-center my-5">
+  <input 
+    type="hidden"
+    [(ngModel)]="user.id"
+    name="id"
+    #id="ngModel"
+  >
+  <img class="rounded-circle mb-4 img-thumbnail shadow" [src]="user.avatar">
+  <mat-form-field>
+    <input 
+      matInput
+      placeholder="Avatar"
+      color="white"
+      type="url"
+      required
+      [(ngModel)]="user.avatar"
+      name="avatar"
+      #avatar="ngModel"
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input 
+      matInput
+      placeholder="First Name"
+      color="white"
+      type="text"
+      required
+      [(ngModel)]="user.first_name"
+      name="first_name"
+      #first_name="ngModel"
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Last Name"
+      type="text"
+      required
+      [(ngModel)]="user.last_name"
+      name="last_name"
+      #last_name="ngModel"
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Password (disabled)" disabled type="password" value="123456">
+  </mat-form-field>
+  <button
+    mat-raised-button
+    class="mt-4"
+    type="submit"
+    [disabled]="!userForm.form.valid"
+  >Saved</button>
+</form>

@@ -1,0 +1,45 @@
+#circle {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    display: block;
+    background: #eee;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    opacity: 0.1;
+}
+#box>div>div  {
+    width: 450px;
+    overflow-y: scroll;
+}
+#lateralHome .display-2 {
+    line-height: 1;
+}
+@media (max-width: 1400px) {
+    #lateralHome>div {
+        width: 100% !important;
+    }
+}
+@media (max-width: 1400px) {
+    #box>div,
+    #box>div>div {
+        width: 100%;
+    }
+}
+@media (max-height: 850px) {
+    #box,
+    #box>div {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+@media (max-height: 580px) {
+    #lateralHome nav {
+        display: none;
+    }
+}
