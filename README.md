@@ -1,6 +1,6 @@
 # ABM de usuarios echa en Angular
 
-Demo: https://matidiaz.com.ar/test/test-abm-user
+Demo: https://matidiaz.com.ar/test/abm-user/dist
 
 ## Como correr la Web APP
 
